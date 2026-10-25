@@ -140,7 +140,7 @@ pre-delay sync Free.
 - Damp follows DECAY, not SIZE: what makes a long tail tiring is its highs ringing on. The curve passes 6.3 kHz at
   the default 4.5 s, close to Clearlight's 7 kHz default.
 
-**Decay's range: 0.35 s to 30 s** (proposed, open row 2), skew 0.35, which puts 4.5 s almost exactly at the knob's
+**Decay's range: 0.35 s to 30 s** (the owner, 2026-10-25), skew 0.35, which puts 4.5 s almost exactly at the knob's
 middle (face 0.502). Clearlight goes to 60 s as its own point of difference; endless washes stay Clearlight's.
 
 **Both macros are continuous and monotonic**, so a turned knob glides through Clearlight's own smoothing (20 ms
@@ -264,7 +264,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | # | Question | Blocks | Options | Lean |
 |---|---|---|---|---|
 | 1 | The compact panel, 720 x 380 with no visualizer button, as an exception to `udidsp-panel` | Phase 2 | the size as proposed; another size; the family's full stack | 720 x 380, recorded as the owner's exception in the panel skill's adoption table |
-| 2 | DECAY's range | Phase 0 | 0.35-30 s; 0.35-20 s; Clearlight's 0.35-60 s | 0.35-30 s: 4.5 s lands mid-knob, endless washes stay Clearlight's |
+| 2 | ~~DECAY's range~~ **Settled 2026-10-25: 0.35-30 s** (below) | | | |
 | 3 | The plugin code | Phase 1 | `Blkl`; another free code (one upper-case letter, first) | `Blkl`: free against the line's list |
 | 4 | MIX's default | Phase 1 | 30%; Clearlight's 35%; 100% (send use) | 30%: an insert default a little drier than Clearlight's |
 | 5 | The macro map's shapes and numbers | Phase 1 | as section 3.1; the owner's adjustments from the Phase 0 renders | section 3.1, then his ears |
@@ -287,6 +287,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | Presets | a small factory set (about 8 to 12) named by use, plus user presets and the family's menu | 2026-10-25 |
 | Price | low, about $19 to $29 | 2026-10-25 |
 | Moonbase id | `blacklight`, created by the owner | 2026-10-25 |
+| DECAY's range (open row 2) | **0.35 s to 30 s**, skew 0.35, default 4.5 s at mid-knob (face 0.502); the longer washes stay Clearlight's (0.35-60 s). The owner chose option 1 of three (0.35-30, 0.35-20, 0.35-60), asked on the desktop | 2026-10-25 |
 
 ## 11. Traps already known
 
