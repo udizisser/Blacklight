@@ -1,5 +1,8 @@
 # Blacklight — product page draft (not for publishing)
 
+**Superseded 2026-10-25:** the real page is `src/content/products/blacklight.md` on the website's branch `blacklight`
+(unlisted, not merged), written from the generated facts; this draft is kept as written.
+
 A first draft for the website, kept here until stage 12 of `new-product` (drafts live only in this file). Every
 number on the real page comes from the generated facts; nothing below has been measured or heard.
 

@@ -180,3 +180,51 @@ hung compile); the session was not allowed to end them, and the owner's restart 
 - The Mac: nothing built or compiled there yet (Apple's clang may warn where MSVC does not).
 - udidsp-hq rows (status, ids, line-status, the release scripts' tables) wait for the first release, as before; the
   install script `work/scripts/install-vst3.ps1` already lists Blacklight (and searches `build-pin`).
+
+## 2026-10-25 (night) — the UI, the guide, the product page and the blog post
+
+**The owner's words, in order:** after trying the Phase 1 build, *"The plugins sounds great"*, then the UI rulings (FREEZE
+in the header, narrower, the stop-the-tail icon at DECAY, the family's knobs, more colours in the glow) and *"4. default
+is 3 (let's add a menu option to select the type of visualizer)"*, *"1 as shown."* (800 x 490), *"1"* (the map settled);
+then *"Work on user guide, website product page, blog post, Price is 29 USD start."* and *"I mean do it all"*. Seeing the
+built panel: *"seems like the plug-in can be even narrower or possibly add another knob just to fill in the gap"*, *"another
+option to make the knobs bigger"*; offered four ways with the header's floor (about 727 px), he chose **MIX joins SIZE,
+DECAY**, and *"but still, size and decay should be bigger than the other knobs"*. All recorded in `design-brief.md`
+section 10, Settled; the as-built panel is in `panel-mockup.md`.
+
+### Built (Clearlight's branch `blacklight-phase0`, `63b5079` and `dc22460`, pushed)
+
+- **FREEZE**: Clearlight's own, nine parameters. The 37 earlier hashes held; one new equivalence case (Freeze held 2 s to
+  4 s), 26 of 26 identical to Clearlight.
+- **The panel, 800 x 490**: SIZE and DECAY at 140 px (the family's knob drawing, its 96 px cap lifted), MIX at 80 px with
+  its padlock, every dial's centre on one line; OUTPUT holds IN over OUT and the meters; the display without its corner
+  readouts. Clearlight's own panel renders unchanged.
+- **The glow's three types**: Halo (the default), Loudness, Fed or Fading, from the menu's Visualizer list; kept per
+  computer in `Blacklight-visualizer.uisettings` beside the `.uisettings` (core's `UiSettings` has no key for it; a core
+  key waits for a core tag). Published images and tests draw the halo.
+- **Checks**: `BlacklightTest` [10] Freeze and [11] the colours as drawn; `BlacklightPanelRender` (the panel's checks, the
+  guide's pictures, the facts); all 15 suites green normal and `--break`; clang 0; full build 0 warnings.
+- **CPU** (`BlacklightCpuBenchmark`, measured): 3.64% of a core at the defaults, 3.73% at SIZE 100% DECAY 30 s, 0.02% in
+  silence, 2.2% holding a tail under Freeze; the panel open adds about a tenth of a point and changes no output hash.
+- **Installed**: the Blacklight VST3 (build 274, hash matches). Test installer `Blacklight-0.1.0-Windows-NoAAX.exe`,
+  unsigned, in Clearlight's `build\installer` and `dist` only (the AAX needs the owner's iLok to be PACE-signed).
+
+### The guide, the page and the post
+
+- **Guide**: Clearlight's `docs/blacklight-user-guide.md` (Ghostlight's edition layout), exported by
+  `tools/export-site-guide.ps1 -Edition Blacklight`. Every number from the facts, the map, the tests or the benchmark.
+- **Product page and blog post**: the website's branch **`blacklight`** (`2744931`, pushed, **not merged**): the page
+  unlisted (`listed: false`, coming soon, $29, the Moonbase id held back until the storefront sells it), the post
+  "Blacklight or Clearlight? One engine, two ways to drive it" as `draft: true`, its pictures from
+  `tools/blog-animations/blacklight.py` (the glow's animation from frames the plugin renders itself). The site deploys
+  on every push to `main`, so merging is the owner's release step.
+
+### Waiting on the owner
+
+- His look at the new panel and the three glow types (installed); his listening to the factory presets (drafts, unheard:
+  the guide's presets chapter follows them).
+- Moonbase: `blacklight` has **trials switched off**, while the plugin's card, the guide and the post offer a 14-day trial
+  as the family does; the product is not yet purchasable; adding it to the Total Bundle (open row 11).
+- Open rows 3 (`Blkl`), 4 (MIX 30%), 8 (examples vs bank), 10 (early-reflection specks), 12 (this repo is public).
+- The eight dry/wet examples for the page (decision 4) wait for the voiced bank. The Mac build, signing, and the AAX.
+- A session saved with the first build (980 wide) reopens at 122% of the new 800: Panel Size 100% puts it right.

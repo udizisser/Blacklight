@@ -4,6 +4,41 @@ The owner's choice (2026-10-25): **a small black box with a minimal display**. T
 scaffold is coded (`new-product` section 1: ASCII mockups before panel code). Sizes are at 100%; core's `panelSize`
 gives 75/100/125/150%.
 
+## As built, 800 x 490: MIX joins SIZE and DECAY (the owner, 2026-10-25)
+
+The approved mock below, built, left a wide gap beside the two knobs. The owner: *"seems like the plug-in can be even
+narrower or possibly add another knob just to fill in the gap"*, *"another option to make the knobs bigger"*; offered
+four ways, he chose **MIX joins SIZE, DECAY**, and *"but still, size and decay should be bigger than the other knobs"*.
+
+```
++------------------------------------------------------------------------------+
+| BLACKLIGHT      [ FREEZE ]      TRIAL      [<][  Default       ][>]  v  =  o |
+| UDI DSP - REVERB                                                             |
+|------------------------------------------------------------------------------|
+| .--------------------------------------------------------------------------. |
+| |      .    .    .    ,~~~~~~~~~~~~~~~~~~~~~~~~~~.    .    .    .            | |
+| | --+-----+-----+----(==============  glow  ==============)-----+-----+--  | |
+| |      .    .    .    `~~~~~~~~~~~~~~~~~~~~~~~~~~'    .    .    .            | |
+| '--------------------------------------------------------------------------' |
+| .- SPACE -----------------------------------------------------. .- OUTPUT -. |
+| |      SIZE               DECAY                               | |  IN   || | |
+| |    .-------.          .-------.            MIX             | |  (|)  || | |
+| |   /         \        /         \         .---.            | | 0 dB  || | |
+| |  |     /     |      |     \     |       (  /  )           | |  OUT  || | |
+| |   \         /        \         /         '---'            | |  (|)  || | |
+| |    '-------'          '-------'        [L] 30 %            | | 0 dB     | |
+| |      55 %           x  4.5 s                               | |          | |
+| '-------------------------------------------------------------' '----------' |
++------------------------------------------------------------------------------+
+```
+
+- **SIZE and DECAY** at a 140 px dial: the family's knob drawing (core's `ParamKnob`) with its 96 px cap lifted
+  (`LargeKnob`, Clearlight's `Source/blacklight/BlacklightControls.h`), the stop-the-tail icon at DECAY's corner.
+- **MIX** beside them at 80 px, with the padlock at its corner; every dial's centre on one line.
+- **OUTPUT** holds IN over OUT and the two meters. MIX left the OUTPUT card on this product alone: the owner's choice
+  of the four offered.
+- The renders: Clearlight's `docs/images/blacklight/` (BlacklightPanelRender), checked by its [8].
+
 ## The approved panel, 800 x 490 (the owner, 2026-10-25: "1 as shown.")
 
 Shown to the owner after his rulings on the first build (FREEZE in the header; narrower, the knobs closer; the

@@ -17,7 +17,7 @@ carries a **lean**: an inclination for discussion to push against, never a decis
   `com.udidsp.blacklight` · **data folder:** `Blacklight` (proposed) · **preset extension:** `.blpreset` (proposed)
 - **Kind:** a **Clearlight edition** (a Variant, `new-product` section 4 Q9), built from Clearlight's repo and trunk
   with a build-time flag, as Ghostlight is built from Ghostlight Pro (the owner, 2026-10-25; decision 33's model).
-- **Price tier:** low, about $19 to $29 (the owner, 2026-10-25); the exact price is set in Moonbase. It would be the
+- **Price: $29** (the owner, 2026-10-25: "Price is 29 USD"; Moonbase holds USD 29 and EUR 29). It is the
   line's cheapest (Ghostlight and Toolbox are $39).
 - **Core pin:** Clearlight's (v0.25.0 today). An edition shares its product's pin (decision 8).
 - **Status:** beta until the owner releases it (decision 6).
@@ -165,7 +165,8 @@ The ids are Clearlight's own, so Clearlight's tests, the MIX lock and BankCheck 
 | `panelBypass` | POWER | bool | | off | | yes | **no** |
 | `bypass` | host bypass | bool | | off | | yes | **no** |
 
-Nine parameters since the owner's Freeze ruling of 2026-10-25 (eight as first built; the code follows on his go).
+Nine parameters since the owner's Freeze ruling of 2026-10-25 (eight as first built; nine in code since the same day,
+Clearlight's own `freeze`, header button and all: BlacklightTest [1], [2]'s Freeze case, [10]).
 Every other Clearlight parameter is **not registered** in this edition (Ghostlight's first
 treatment), so a host never shows a control the panel doesn't have. The processor's parameter pointers for them are
 guarded out and the edition supplies values in their place.
@@ -275,7 +276,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | 6 | ~~Clarity fixed at 0.5~~ **Settled 2026-10-25: 0.5** (below); the listening sheet's line 6 still plays it against off | | | |
 | 7 | ~~Stop-the-tail button beside DECAY~~ **Settled 2026-10-25: kept, as the family's small icon at DECAY's corner** (below) | | | |
 | 8 | Eight examples vs a small bank (decision 4: one per category, from the product's own bank) | Phase 4 | 8 categories with 12 presets (some have two); 8 presets, one each | 8 categories, 12 presets (`docs/factory-presets.md`) |
-| 9 | The editor built on core's `PanelShell` | Phase 2 | PanelShell (Fluxwave's way); a second subclass of Clearlight's own editor base | PanelShell: the shared shell, and Clearlight can move to it later |
+| 9 | The editor built on core's `PanelShell` | Phase 2 | PanelShell (Fluxwave's way); a second subclass of Clearlight's own editor base; Clearlight's own editor with the edition's face (as built) | **Built as the third, 2026-10-25, a lean for the owner to overrule**: one editor class for both editions, so the header, menu, presets, licence and About can never drift apart; PanelShell when Clearlight moves to it |
 | 10 | Early reflections drawn in the display | Phase 3 | the glow alone; glow plus early-reflection specks | the glow alone first; specks if the owner wants more life |
 | 11 | Blacklight in the Total Bundle | Phase 4 | in it; not in it | in it: the bundle lists every plugin (the owner does it in Moonbase) |
 | 12 | This repo's role, and its visibility | now | design and docs here, code in Clearlight's repo (the edition); make it private | as stated, and private like the line's other repos (it is public today) |
@@ -289,7 +290,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | Build | a Clearlight edition (one repo, an edition flag) | 2026-10-25 |
 | Panel | a small black box with a minimal display | 2026-10-25 |
 | Presets | a small factory set (about 8 to 12) named by use, plus user presets and the family's menu | 2026-10-25 |
-| Price | low, about $19 to $29 | 2026-10-25 |
+| Price | low, about $19 to $29; then **$29**: *"Price is 29 USD"* (Moonbase: USD 29, EUR 29) | 2026-10-25 |
 | Moonbase id | `blacklight`, created by the owner | 2026-10-25 |
 | DECAY's range (open row 2) | **0.35 s to 30 s**, skew 0.35, default 4.5 s at mid-knob (face 0.502); the longer washes stay Clearlight's (0.35-60 s). The owner chose option 1 of three (0.35-30, 0.35-20, 0.35-60), asked on the desktop | 2026-10-25 |
 | Clarity (open row 6) | **fixed at 0.5**, Clearlight's default; not a control. The owner chose option 1 of three (0.5, off, 0.7). Listening line 6 (0.5 against off, on the vocal) can still move it before Phase 1 | 2026-10-25 |
@@ -301,6 +302,8 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | The glow's colours | Asked: *"I would like to see more colors (they can be faint) ... I like the fact that the glow is same color maybe something that is related to the level or intesity?"* Three ideas offered: 1 colour by loudness (one colour at a time, faint blue quiet, violet, warm amber loudest; Fluxwave's tape display colours by level the same way; no red, the family's "too hot"), 2 fed or fading (warm while sound pours in, blue once the room only rings), 3 a faint halo (today's core colour, which follows DECAY, plus a faint outer haze from blue to amber with loudness). **The owner: "4. default is 3 (let's add a menu option to select the type of visualizer)"**: all three are offered, the halo is the default, and the main menu chooses. The choice is a UI preference, kept per computer in the product's `.uisettings` like panel size and tooltips (core's `UiSettings`); published images and tests always draw the default (Ghostlight's old Show Spectrum Cloud preference, kept that way, once stripped the colour from every render made on its machine) | 2026-10-25 |
 | The panel's layout (open row 1) | **800 x 490, as the mock** in `docs/panel-mockup.md` ("The approved panel"): the family header with FREEZE; the glow display the full width; one SPACE card with SIZE and DECAY as the family's large knobs close together, each value under its dial, the stop-the-tail icon at DECAY's corner; the OUTPUT card (MIX, IN, OUT, the meters, the MIX lock). The display's two corner readouts are dropped (each knob shows its value). 800 because the family header with FREEZE needs about 780 (`headerLayout`); 490 is the family's rows with no footer. The owner: *"1 as shown."* | 2026-10-25 |
 | The macro map (open row 5) | **as section 3.1, unchanged.** Asked whether his *"The plugins sounds great"* settles how SIZE and DECAY move the room underneath, he chose option 1: *"1"*, keep the mapping as it is and close the listening sheet (its nine lines were not answered one by one). The map's numbers are now the product's; a change re-voices saved sessions (section 11) and is deliberate | 2026-10-25 |
+| The panel's gap (after the 800 x 490 build) | Seeing the built panel: *"seems like the plug-in can be even narrower or possibly add another knob just to fill in the gap"*, then *"another option to make the knobs bigger"*. Offered four (narrower with bigger knobs; bigger at 800; a third sound knob; MIX joining SIZE and DECAY) with the header's floor (about 727 px), he chose **MIX joins SIZE, DECAY**, and added *"but still, size and decay should be bigger than the other knobs"*. Built: SPACE holds SIZE and DECAY at a 140 px dial (the family's knob drawing, its 96 px cap lifted: `LargeKnob`) and MIX at 80 px with its padlock, every dial's centre on one line; OUTPUT holds IN over OUT and the two meters; still 800 x 490. No new control: MIX was already Blacklight's | 2026-10-25 |
+| Where the visualizer's type is kept | Per computer, as asked, but in a file of its own beside the product's `.uisettings` (`Blacklight-visualizer.uisettings`), not in it: core's `UiSettings` at the pinned v0.25.0 has no key for it, and a second writer on that file would lose changes both ways. Moving it into core waits for a core tag (the owner's) | 2026-10-25 |
 
 ## 11. Traps already known
 
