@@ -37,7 +37,7 @@ stays clear, at a price that makes it an easy first purchase in the line.
 - Clearlight's own customers on a busy session: a cheap, light instance for the tracks that only need "some space".
 
 **What it is not** (so the next session does not add it):
-- **Not a second Clearlight.** No third character knob, no ADVANCED page, no Freeze, no tempo sync, no dynamics or
+- **Not a second Clearlight.** No third character knob, no ADVANCED page, no tempo sync, no dynamics or
   colour stages (Warm, Compression, Ducking, Dynamic EQ). The owner, 2026-10-25: *"if we had too many controls we're
   just recreating clear light."* Every extra control is a step toward that.
 - Not a "lite" Clearlight with controls greyed out. It is its own product with its own voicing: the two knobs move
@@ -64,7 +64,9 @@ The rules every mapping obeys:
    promise "auto-adapting" or "intelligent" behaviour. Clarity reacts to the source and the guide says that plainly.
 
 **What the line excludes** (each could come back only by the owner's decision, never by drift):
-- any third sound control; a Freeze; tempo sync; the dynamics and colour stages; an EQ page; visible pre-delay.
+- any third sound control; tempo sync; the dynamics and colour stages; an EQ page; visible pre-delay.
+- (A Freeze was on this list until the owner's ruling of 2026-10-25: *"We need freeze button like the other reverbs
+  (on the top bar)"*. It is in, as a header button like Clearlight's and Ghostlight's; see section 10, Settled.)
 
 ## 3. The signal chain
 
@@ -158,11 +160,13 @@ The ids are Clearlight's own, so Clearlight's tests, the MIX lock and BankCheck 
 | `decay` | DECAY | float | 0.35 … 30, skew 0.35 | 4.5 | s | yes | yes |
 | `mix` | MIX | float | 0 … 1 | 0.30 (open row 4) | % | yes | yes (held by the MIX lock) |
 | `inputGain` / `outputGain` | IN / OUT | float | -24 … +24 | 0 | dB | yes | yes (held by the MIX lock) |
+| `freeze` | FREEZE (header) | bool | | off | | yes | **no** (as Clearlight: a preset neither sets nor clears it) |
 | `killTail` | Stop the tail | bool, momentary | | off | | yes | **no** |
 | `panelBypass` | POWER | bool | | off | | yes | **no** |
 | `bypass` | host bypass | bool | | off | | yes | **no** |
 
-Eight parameters. Every other Clearlight parameter is **not registered** in this edition (Ghostlight's first
+Nine parameters since the owner's Freeze ruling of 2026-10-25 (eight as first built; the code follows on his go).
+Every other Clearlight parameter is **not registered** in this edition (Ghostlight's first
 treatment), so a host never shows a control the panel doesn't have. The processor's parameter pointers for them are
 guarded out and the edition supplies values in their place.
 
@@ -263,13 +267,13 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 
 | # | Question | Blocks | Options | Lean |
 |---|---|---|---|---|
-| 1 | The compact panel, 720 x 380 with no visualizer button, as an exception to `udidsp-panel` | Phase 2 | the size as proposed; another size; the family's full stack | 720 x 380, recorded as the owner's exception in the panel skill's adoption table |
+| 1 | ~~The compact panel~~ **Narrower: the owner's ruling, 2026-10-25** (below). Open still: the exact size and layout, to be shown as a mock. The family header with FREEZE, the presets, menu, visualizer button and licence badge needs about 780 px (`headerLayout`), so about 800 wide, not the 720 first proposed; 490 tall as built today (Clearlight's 520 less the footer row and its gap) | Phase 2 | | 800 wide, the family's rows otherwise |
 | 2 | ~~DECAY's range~~ **Settled 2026-10-25: 0.35-30 s** (below) | | | |
 | 3 | The plugin code | Phase 1 | `Blkl`; another free code (one upper-case letter, first) | `Blkl`: free against the line's list. **Built at the lean on 2026-10-25, provisional** (the owner has not ruled; it freezes at the first public build) |
 | 4 | MIX's default | Phase 1 | 30%; Clearlight's 35%; 100% (send use) | 30%: an insert default a little drier than Clearlight's. **Built at the lean on 2026-10-25, provisional** |
 | 5 | The macro map's shapes and numbers | Phase 1 | as section 3.1; the owner's adjustments from the Phase 0 renders | section 3.1, then his ears |
 | 6 | ~~Clarity fixed at 0.5~~ **Settled 2026-10-25: 0.5** (below); the listening sheet's line 6 still plays it against off | | | |
-| 7 | Stop-the-tail button beside DECAY | Phase 2 | keep (and Clear Tail on Preset Change in the menu); leave out | keep: the product contract asks it of a reverb, and it is a button, not a sound control |
+| 7 | ~~Stop-the-tail button beside DECAY~~ **Settled 2026-10-25: kept, as the family's small icon at DECAY's corner** (below) | | | |
 | 8 | Eight examples vs a small bank (decision 4: one per category, from the product's own bank) | Phase 4 | 8 categories with 12 presets (some have two); 8 presets, one each | 8 categories, 12 presets (`docs/factory-presets.md`) |
 | 9 | The editor built on core's `PanelShell` | Phase 2 | PanelShell (Fluxwave's way); a second subclass of Clearlight's own editor base | PanelShell: the shared shell, and Clearlight can move to it later |
 | 10 | Early reflections drawn in the display | Phase 3 | the glow alone; glow plus early-reflection specks | the glow alone first; specks if the owner wants more life |
@@ -289,6 +293,12 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | Moonbase id | `blacklight`, created by the owner | 2026-10-25 |
 | DECAY's range (open row 2) | **0.35 s to 30 s**, skew 0.35, default 4.5 s at mid-knob (face 0.502); the longer washes stay Clearlight's (0.35-60 s). The owner chose option 1 of three (0.35-30, 0.35-20, 0.35-60), asked on the desktop | 2026-10-25 |
 | Clarity (open row 6) | **fixed at 0.5**, Clearlight's default; not a control. The owner chose option 1 of three (0.5, off, 0.7). Listening line 6 (0.5 against off, on the vocal) can still move it before Phase 1 | 2026-10-25 |
+| The sound, first heard | *"The plugins sounds great"*: the owner, after trying the installed Phase 1 build (Clearlight `026c909`). The listening sheet's nine lines were not answered one by one | 2026-10-25 |
+| Freeze | **in**: *"We need freeze button like the other reverbs (on the top bar)"*. A FREEZE header button like Clearlight's, on Clearlight's own `freeze` (the kill releases it, the tail reported infinite while it holds, never in a preset). Section 1's "no Freeze" is struck | 2026-10-25 |
+| Panel width (open row 1) | **narrower than the family's 980, with the two knobs closer together**: *"The UI can be narrower with the two knobs closer to each other"*. A per-product ruling, as Dopplermotion's taller display is; the size comes as a mock | 2026-10-25 |
+| Stop the tail (open row 7) | **the family's small icon next to DECAY**, not a pill: *"the stop tail button that is a small icon next to decay and not big pill"*. Core's `TailKillButton` at DECAY's corner, as Clearlight has it | 2026-10-25 |
+| SIZE and DECAY's knobs | **the family's knob, large**, in place of the 3D knobs: *"The size and decay buttons are nice but they are too far from the family, maybe use something like the Dronevibe Weight?"* WEIGHT is core's `ParamKnob` drawn large (caption above, value below); its drawing is the same at Clearlight's core v0.25.0, so no core change. WEIGHT's two-colour ring with the 12 o'clock mark is its own and not used | 2026-10-25 |
+| The glow's colours | **open**: *"I would like to see more colors (they can be faint) ... I like the fact that the glow is same color maybe something that is related to the level or intesity?"* Ideas asked | 2026-10-25 |
 
 ## 11. Traps already known
 
