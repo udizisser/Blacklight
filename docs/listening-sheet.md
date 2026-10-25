@@ -21,3 +21,7 @@ not level.
 
 **Report:** per line, pass / fail / a note. A failed line names the setting to move, and the map changes before
 Phase 1.
+
+**Closed 2026-10-25, by the owner.** After trying the installed Phase 1 build he said *"The plugins sounds great"*,
+and asked whether that settles the knob mapping, he chose *"1"*: keep it as it is and close this sheet. The nine lines
+were not answered one by one; the map stands as `design-brief.md` section 3.1.

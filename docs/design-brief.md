@@ -97,7 +97,7 @@ in -> IN -> dry copy
 | **The edition flag** | **NEW** | Clearlight CMake + `PluginProcessor` | `CLEARLIGHT_EDITION_BLACKLIGHT=1` |
 | **The compact editor** | **NEW** | Clearlight `Source/blacklight/` | section 5 |
 
-### 3.1 The macro map (proposed, for the owner's ears in Phase 0)
+### 3.1 The macro map (settled by the owner's ear, 2026-10-25: section 10, Settled)
 
 The knobs' face values: SIZE `s` is 0..1 (shown 0-100%), DECAY `d` is seconds. All figures below are what the
 mapping hands Clearlight's **face values** (the same units Clearlight's presets use), so Clearlight's own floors,
@@ -271,7 +271,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | 2 | ~~DECAY's range~~ **Settled 2026-10-25: 0.35-30 s** (below) | | | |
 | 3 | The plugin code | Phase 1 | `Blkl`; another free code (one upper-case letter, first) | `Blkl`: free against the line's list. **Built at the lean on 2026-10-25, provisional** (the owner has not ruled; it freezes at the first public build) |
 | 4 | MIX's default | Phase 1 | 30%; Clearlight's 35%; 100% (send use) | 30%: an insert default a little drier than Clearlight's. **Built at the lean on 2026-10-25, provisional** |
-| 5 | The macro map's shapes and numbers | Phase 1 | as section 3.1; the owner's adjustments from the Phase 0 renders | section 3.1, then his ears |
+| 5 | ~~The macro map's shapes and numbers~~ **Settled 2026-10-25: as section 3.1** (below) | | | |
 | 6 | ~~Clarity fixed at 0.5~~ **Settled 2026-10-25: 0.5** (below); the listening sheet's line 6 still plays it against off | | | |
 | 7 | ~~Stop-the-tail button beside DECAY~~ **Settled 2026-10-25: kept, as the family's small icon at DECAY's corner** (below) | | | |
 | 8 | Eight examples vs a small bank (decision 4: one per category, from the product's own bank) | Phase 4 | 8 categories with 12 presets (some have two); 8 presets, one each | 8 categories, 12 presets (`docs/factory-presets.md`) |
@@ -300,6 +300,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | SIZE and DECAY's knobs | **the family's knob, large**, in place of the 3D knobs: *"The size and decay buttons are nice but they are too far from the family, maybe use something like the Dronevibe Weight?"* WEIGHT is core's `ParamKnob` drawn large (caption above, value below); its drawing is the same at Clearlight's core v0.25.0, so no core change. WEIGHT's two-colour ring with the 12 o'clock mark is its own and not used | 2026-10-25 |
 | The glow's colours | Asked: *"I would like to see more colors (they can be faint) ... I like the fact that the glow is same color maybe something that is related to the level or intesity?"* Three ideas offered: 1 colour by loudness (one colour at a time, faint blue quiet, violet, warm amber loudest; Fluxwave's tape display colours by level the same way; no red, the family's "too hot"), 2 fed or fading (warm while sound pours in, blue once the room only rings), 3 a faint halo (today's core colour, which follows DECAY, plus a faint outer haze from blue to amber with loudness). **The owner: "4. default is 3 (let's add a menu option to select the type of visualizer)"**: all three are offered, the halo is the default, and the main menu chooses. The choice is a UI preference, kept per computer in the product's `.uisettings` like panel size and tooltips (core's `UiSettings`); published images and tests always draw the default (Ghostlight's old Show Spectrum Cloud preference, kept that way, once stripped the colour from every render made on its machine) | 2026-10-25 |
 | The panel's layout (open row 1) | **800 x 490, as the mock** in `docs/panel-mockup.md` ("The approved panel"): the family header with FREEZE; the glow display the full width; one SPACE card with SIZE and DECAY as the family's large knobs close together, each value under its dial, the stop-the-tail icon at DECAY's corner; the OUTPUT card (MIX, IN, OUT, the meters, the MIX lock). The display's two corner readouts are dropped (each knob shows its value). 800 because the family header with FREEZE needs about 780 (`headerLayout`); 490 is the family's rows with no footer. The owner: *"1 as shown."* | 2026-10-25 |
+| The macro map (open row 5) | **as section 3.1, unchanged.** Asked whether his *"The plugins sounds great"* settles how SIZE and DECAY move the room underneath, he chose option 1: *"1"*, keep the mapping as it is and close the listening sheet (its nine lines were not answered one by one). The map's numbers are now the product's; a change re-voices saved sessions (section 11) and is deliberate | 2026-10-25 |
 
 ## 11. Traps already known
 
