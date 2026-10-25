@@ -234,3 +234,21 @@ section 10, Settled; the as-built panel is in `panel-mockup.md`.
 and we can always change later"): the website's `main` at `ef380b9`, deployed. The page and guide are live at
 udidsp.com/products/blacklight/ (coming soon, $29, still listed nowhere, the Moonbase id still held back) and the post
 at udidsp.com/blog/blacklight-or-clearlight/ (no longer a draft, so /blog lists it).
+
+## 2026-10-25 (late) — Blacklight 1.0.0 signed on both platforms
+
+The owner: *"let's finalize windows including Axx, signing etc, in parallel work on the macos in it's session"*; asked first, he
+gave the version (**1.0.0**), kept the plugin code (**`Blkl`, now frozen**) and moved the iLok between the PC and the Mac mini.
+
+- **Both platforms at Clearlight `5fe45c5`, build 277** (branch `blacklight-phase0`). Windows: `Blacklight-1.0.0-Windows.exe` Valid (UDI
+  AUDIO), the AAX PACE-signed and verified, VST3 and signed AAX installed, pluginval 10 clean twice, full build 0 warnings. Mac (the
+  Blacklight session on the mini): `Blacklight-1.0.0-macOS.pkg`, notarized (Accepted, 0 issues), `verify-mac.sh` 1 of 1, auval PASS.
+- **A bug the Mac caught**: BlacklightTest [11e] failed on Apple silicon only. The box's accent was an inline global copied from
+  `theme::ghost` at start-up, made there before the theme's constant, so it came out empty: the halo lost DECAY's colour and SIZE's,
+  DECAY's and the stop icon's blue went with it. Now `boxAccent()`, read when drawn (`5fe45c5`). The first signing at `799ccba` is
+  superseded.
+- Facts at 1.0.0, build 277, committed after both packages (the website's PLUGIN-FACTS-BLACKLIGHT.md updated).
+- **Left:** the owner's tests on both platforms (he said he will run them now); the Mac hash baseline and the repo's Mac installer
+  script for the edition (the Mac session holds both: commits after the packages); pluginval on the Mac; merging `blacklight-phase0`
+  into Clearlight's `main` (asked, never assumed); Moonbase uploads, purchasable, the Total Bundle, and the page's release switches
+  (available, listed, the Moonbase id), all his.
