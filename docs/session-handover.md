@@ -223,8 +223,9 @@ section 10, Settled; the as-built panel is in `panel-mockup.md`.
 
 - His look at the new panel and the three glow types (installed); his listening to the factory presets (drafts, unheard:
   the guide's presets chapter follows them).
-- Moonbase: `blacklight` has **trials switched off**, while the plugin's card, the guide and the post offer a 14-day trial
-  as the family does; the product is not yet purchasable; adding it to the Total Bundle (open row 11).
+- Moonbase: ~~trials switched off~~ **trials on since the same night** (the owner: "The moobase is now set with trials";
+  read back: 14 days, account required, 5 activations a licence); the product is not yet purchasable; adding it to the
+  Total Bundle (open row 11).
 - Open rows 3 (`Blkl`), 4 (MIX 30%), 8 (examples vs bank), 10 (early-reflection specks), 12 (this repo is public).
 - The eight dry/wet examples for the page (decision 4) wait for the voiced bank. The Mac build, signing, and the AAX.
 - A session saved with the first build (980 wide) reopens at 122% of the new 800: Panel Size 100% puts it right.
