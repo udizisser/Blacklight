@@ -83,7 +83,7 @@ in -> IN -> dry copy
 | Stage | HAVE / ADAPT / NEW | Where it lives | In Blacklight |
 |---|---|---|---|
 | Input trim, NaN door, mono handling, bypass crossfade, rest on silence | HAVE | Clearlight | unchanged |
-| Clarity (analysis + carve) | HAVE | Clearlight `dsp/ClarityEngine` | fixed at 0.5, Clearlight's default (open row 6) |
+| Clarity (analysis + carve) | HAVE | Clearlight `dsp/ClarityEngine` | fixed at 0.5, Clearlight's default (the owner, 2026-10-25) |
 | Contour stage, ER Gap, ER Tone, ER Width | HAVE | Clearlight `dsp/` | Spread and Early from SIZE; Shape, Gap, Tone, Width fixed at Clearlight's defaults |
 | FDNReverb | HAVE | core | Size, Decay, Pre-Delay, Diffusion, Damp from the macros; Low Cut 150 Hz; Knee 0; Freeze off |
 | StereoField | HAVE | Clearlight `dsp/StereoField` | Width 1.0; Focus from SIZE |
@@ -268,7 +268,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | 3 | The plugin code | Phase 1 | `Blkl`; another free code (one upper-case letter, first) | `Blkl`: free against the line's list |
 | 4 | MIX's default | Phase 1 | 30%; Clearlight's 35%; 100% (send use) | 30%: an insert default a little drier than Clearlight's |
 | 5 | The macro map's shapes and numbers | Phase 1 | as section 3.1; the owner's adjustments from the Phase 0 renders | section 3.1, then his ears |
-| 6 | Clarity fixed at 0.5 | Phase 0 | 0.5; off (0); a little more (0.7) | 0.5, Clearlight's: it is half of why Clearlight stays clear; A/B in the listening sheet |
+| 6 | ~~Clarity fixed at 0.5~~ **Settled 2026-10-25: 0.5** (below); the listening sheet's line 6 still plays it against off | | | |
 | 7 | Stop-the-tail button beside DECAY | Phase 2 | keep (and Clear Tail on Preset Change in the menu); leave out | keep: the product contract asks it of a reverb, and it is a button, not a sound control |
 | 8 | Eight examples vs a small bank (decision 4: one per category, from the product's own bank) | Phase 4 | 8 categories with 12 presets (some have two); 8 presets, one each | 8 categories, 12 presets (`docs/factory-presets.md`) |
 | 9 | The editor built on core's `PanelShell` | Phase 2 | PanelShell (Fluxwave's way); a second subclass of Clearlight's own editor base | PanelShell: the shared shell, and Clearlight can move to it later |
@@ -288,6 +288,7 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 | Price | low, about $19 to $29 | 2026-10-25 |
 | Moonbase id | `blacklight`, created by the owner | 2026-10-25 |
 | DECAY's range (open row 2) | **0.35 s to 30 s**, skew 0.35, default 4.5 s at mid-knob (face 0.502); the longer washes stay Clearlight's (0.35-60 s). The owner chose option 1 of three (0.35-30, 0.35-20, 0.35-60), asked on the desktop | 2026-10-25 |
+| Clarity (open row 6) | **fixed at 0.5**, Clearlight's default; not a control. The owner chose option 1 of three (0.5, off, 0.7). Listening line 6 (0.5 against off, on the vocal) can still move it before Phase 1 | 2026-10-25 |
 
 ## 11. Traps already known
 
