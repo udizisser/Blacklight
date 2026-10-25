@@ -4,6 +4,54 @@ The owner's choice (2026-10-25): **a small black box with a minimal display**. T
 scaffold is coded (`new-product` section 1: ASCII mockups before panel code). Sizes are at 100%; core's `panelSize`
 gives 75/100/125/150%.
 
+## The approved panel, 800 x 490 (the owner, 2026-10-25: "1 as shown.")
+
+Shown to the owner after his rulings on the first build (FREEZE in the header; narrower, the knobs closer; the
+stop-the-tail as the small icon at DECAY; the family's knob, like Dronevibe's WEIGHT; a faint halo as the default
+glow, the type chosen in the menu). 800 wide because the family header with FREEZE, presets, the visualizer button,
+the menu, POWER and the licence badge needs about 780 (`headerLayout`); 490 tall, the family's rows with no footer.
+Ten pixels a column.
+
+```
++------------------------------------------------------------------------------+
+| BLACKLIGHT      [ FREEZE ]      TRIAL      [<][  Default       ][>]  v  =  o |
+| UDI DSP - REVERB                                                             |
+| ---------------------------------------------------------------------------- |
+| .--------------------------------------------------------------------------. |
+| |                                                                          | |
+| |                     .    .    .    .    .    .    .                      | |
+| |             .         ,~~~~~~~~~~~~~~~~~~~~~~~~~~.         .             | |
+| | --+-----+-----+-----(==============  glow  ==============)-----+-----+-- | |
+| |             .         `~~~~~~~~~~~~~~~~~~~~~~~~~~'         .             | |
+| |                     .    .    .    .    .    .    .                      | |
+| |                                                                          | |
+| '--------------------------------------------------------------------------' |
+| .- SPACE -----------------------------------------------. .- OUTPUT -------. |
+| |                                                       | | MIX       [L]  | |
+| |               SIZE              DECAY                 | | .---.    | |   | |
+| |              .-----.           .-----.                | |(  /  )   | |   | |
+| |             /       \         /       \               | | '---'    | |   | |
+| |            |    /    |       |     \   |              | |  30 %    | |   | |
+| |             \       /       x \       /               | | IN   OUT | |   | |
+| |              '-----'           '-----'                | | o     o        | |
+| |                55 %             4.5 s                 | |0 dB  0 dB      | |
+| |                                                       | |                | |
+| '-------------------------------------------------------' '----------------' |
+|                                                                              |
++------------------------------------------------------------------------------+
+```
+
+- **SIZE and DECAY** are core's `ParamKnob`, large, close together, each value under its dial (WEIGHT's look without
+  its two-colour ring).
+- **x** at DECAY's corner is core's `TailKillButton`, as on Clearlight's DECAY.
+- **The dots** round the glow are the faint halo, the default type (Halo); the main menu's Visualizer list also offers
+  Loudness and Fed or fading. The choice is kept per computer (`UiSettings`); renders and tests draw the default.
+- **[L]** is the MIX lock; **v, =, o** the visualizer button, the menu and POWER; **| |** the IN and OUT meters.
+- **Dropped from the first build, at the owner's word:** the SIZE and DECAY readouts in the display's top corners (each
+  knob shows its value), the 3D knobs, the STOP TAIL pill.
+
+The drafts below (A to C, 720 x 380, written before any code) are superseded by this panel.
+
 ## A. The panel, 720 x 380
 
 ```
