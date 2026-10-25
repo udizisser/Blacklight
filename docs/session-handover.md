@@ -229,3 +229,8 @@ section 10, Settled; the as-built panel is in `panel-mockup.md`.
 - Open rows 3 (`Blkl`), 4 (MIX 30%), 8 (examples vs bank), 10 (early-reflection specks), 12 (this repo is public).
 - The eight dry/wet examples for the page (decision 4) wait for the voiced bank. The Mac build, signing, and the AAX.
 - A session saved with the first build (980 wide) reopens at 122% of the new 800: Panel Size 100% puts it right.
+
+**Published the same night for review** (the owner: "you can already make them on the website.. it's easier to review
+and we can always change later"): the website's `main` at `ef380b9`, deployed. The page and guide are live at
+udidsp.com/products/blacklight/ (coming soon, $29, still listed nowhere, the Moonbase id still held back) and the post
+at udidsp.com/blog/blacklight-or-clearlight/ (no longer a draft, so /blog lists it).
