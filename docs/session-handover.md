@@ -99,3 +99,67 @@ The owner does all listening and every DAW test; never launch a DAW. One numbere
 what you hear. Record every decision the turn it is made. No outside code (decision 19). Nothing ships until Windows
 and macOS are both signed. Read `D:\Plugins Dev\udidsp-hq\skills\new-product\SKILL.md` and Clearlight's
 `CLAUDE.md` (its log) and `docs/north-star.md` first.
+
+## 2026-10-25 — Phase 0 rendered, Phase 1 built (the desktop; this entry written by the session that resumed a stale one)
+
+**What happened.** The desktop session settled DECAY's range (0.35-30 s) and Clarity (0.5) with the owner, built Phase 0
+(Clearlight commit `3502a87`: the macro map `Source/BlacklightMacros.h`, its test, the voicing renders in Clearlight's
+gitignored `listening/blacklight-phase0/`), then began Phase 1 and went stale with it uncommitted at 12:01. The owner,
+asked which first (push, listen, or finish Phase 1), chose to **finish Phase 1 before his listening**; this session read
+the uncommitted code line by line and finished it.
+
+**Phase 0's listening is still open**: no verdict on any of the nine lines. The folder is on the desktop PC only
+(`D:\Plugins Dev\Clearlight\listening\blacklight-phase0\`, README.txt names every file; the blind pairs' key is in
+`_work\scratch\blacklight-phase0-key.txt`).
+
+### Phase 1 as built (Clearlight repo, branch `blacklight-phase0`)
+
+- **A runtime edition, not a compile-time one** (the desktop session's design, kept): `ClearlightAudioProcessor(Edition)`,
+  the plug-in target choosing it by `CLEARLIGHT_EDITION_BLACKLIGHT=1`. So one test program runs both editions side by
+  side. The eight parameters are registered and every other Clearlight parameter pointer is bound to a value the
+  edition owns (Clearlight's default, or what the map hands on once a block). `renderStereo` is the same code for both.
+- **CMake target `Blacklight`**: plugin code `Blkl` (open row 3, at the lean, provisional), bundle
+  `com.udidsp.blacklight`, VST3/AU/AAX, no Standalone, `VERSION 0.1.0` provisional (`set(BLACKLIGHT_VERSION ...)`).
+- **Presets**: `.blpreset`, `BlacklightPreset`, folder `Blacklight`, bank id `blacklight`; the twelve drafts of
+  `docs/factory-presets.md` are in code as drafts (`blacklightPresetTable()`), unheard. MIX 30% (open row 4, at the lean).
+- **The panel is Clearlight's editor with a Blacklight face** (the desktop session's choice, not the brief's 720 x 380
+  design): the same header without FREEZE, a glow display in place of the visualizer, one SPACE card with two big
+  3D-styled knobs and a STOP TAIL pill (`Source/blacklight/BlacklightControls.h`), OUTPUT without WIDTH, no footer.
+  Its header quotes the owner: "a slick UI that feels functional but still keeps the family vibe. Maybe bigger
+  buttons that feels more 3d. we can tweak the UI later." This is Phase 2's scaffold, not its design: nothing of it
+  has been looked at, and PanelRender does not render it yet.
+- **Gates** (`tools/run-tests.ps1`): `BlacklightMacrosTest`, `BlacklightSmokeTest` and `BlacklightHostBlockTest` (the two
+  shared suites compiled as the edition), and **`BlacklightTest`**, the edition's own: the parameter list, the
+  edition-equivalence check against Clearlight, Blacklight's own hash baseline, presets refused across editions, the
+  MIX lock over every preset, the tail at the four corners, the kill, a session round trip, the display's feed. Every
+  broken bar is caught (`--break`: ALL CAUGHT).
+- **Installer**: `tools/build-installer.ps1 -Edition Blacklight` (AppId `{1B5000E2-...}` passed into the one .iss; a
+  `-BuildDir` switch for build-pin). Dry run: `Blacklight-0.1.0-Windows-NoAAX.exe`, 4.3 MB, unsigned, named as a test
+  installer, kept out of the Desktop folder.
+- Built in `build-pin` against the core worktree at exactly v0.25.0 (the sibling core is at v0.27.0), 0 compiler
+  warnings.
+
+### What the gate found, and what is RED at the time of writing
+
+**Blacklight was not bit-identical to Clearlight above DECAY 1 s.** The map's Damp (`9000 * d^-0.24`) is handed to the
+chain as is, while a Clearlight host-set Damp goes through the parameter's skewed range (normalised and back), which
+does not give the value back to the bit; below 1 s the map's Damp is the round 9 kHz and the two agree, so 5 of 25
+cases were identical and 20 differed in every sample. **The fix is written** (`applyBlacklightMap()` passes each
+mapped value through its parameter's range, `asParameterHolds()`; the ranges named once as `dampRange()`,
+`predelayRange()`) **but could not be applied**: three source files (`PluginProcessor.cpp`, `.h`, `PresetManager.cpp`)
+are held open by seven `cl.exe` processes left behind by the stale session's build at 12:03 (a hung compile of
+KillTailTest, a second or two of CPU in six hours), and this session is not allowed to end processes. The patch is
+in the session's scratchpad (`patch-processor.py`); the owner ends the processes or the next session reapplies it by
+hand, then: rebuild, `BlacklightTest` must read 25 of 25 identical, `BlacklightTest --update` writes the first
+baseline, the runner green in both modes, commit.
+
+### Left for later, by name
+
+- The compact 720 x 380 panel of the brief (open row 1) against the scaffold now built; PanelRender for Blacklight.
+- HostReadinessTest, KillTailTest, ChainHash, BankCheck and CpuBenchmark compiled as the edition (they set Freeze,
+  Knee or the stages by id); what Blacklight needs of them is in BlacklightTest. CPU at the four corners is unmeasured.
+- A `BlacklightVoicing` run reads the map's unsnapped Damp (Phase 0's renders were made before the fix); the audible
+  difference is well under a hertz of corner frequency, so the renders stand for listening.
+- The Mac: nothing built or compiled there yet (Apple's clang may warn where MSVC does not).
+- udidsp-hq rows (status, ids, line-status, the release scripts' tables) wait for the first release, as before; the
+  install script `work/scripts/install-vst3.ps1` already lists Blacklight (and searches `build-pin`).

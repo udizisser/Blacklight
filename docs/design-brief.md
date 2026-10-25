@@ -265,8 +265,8 @@ Asked one at a time, numbered, each explained as what you hear (the owner's stan
 |---|---|---|---|---|
 | 1 | The compact panel, 720 x 380 with no visualizer button, as an exception to `udidsp-panel` | Phase 2 | the size as proposed; another size; the family's full stack | 720 x 380, recorded as the owner's exception in the panel skill's adoption table |
 | 2 | ~~DECAY's range~~ **Settled 2026-10-25: 0.35-30 s** (below) | | | |
-| 3 | The plugin code | Phase 1 | `Blkl`; another free code (one upper-case letter, first) | `Blkl`: free against the line's list |
-| 4 | MIX's default | Phase 1 | 30%; Clearlight's 35%; 100% (send use) | 30%: an insert default a little drier than Clearlight's |
+| 3 | The plugin code | Phase 1 | `Blkl`; another free code (one upper-case letter, first) | `Blkl`: free against the line's list. **Built at the lean on 2026-10-25, provisional** (the owner has not ruled; it freezes at the first public build) |
+| 4 | MIX's default | Phase 1 | 30%; Clearlight's 35%; 100% (send use) | 30%: an insert default a little drier than Clearlight's. **Built at the lean on 2026-10-25, provisional** |
 | 5 | The macro map's shapes and numbers | Phase 1 | as section 3.1; the owner's adjustments from the Phase 0 renders | section 3.1, then his ears |
 | 6 | ~~Clarity fixed at 0.5~~ **Settled 2026-10-25: 0.5** (below); the listening sheet's line 6 still plays it against off | | | |
 | 7 | Stop-the-tail button beside DECAY | Phase 2 | keep (and Clear Tail on Preset Change in the menu); leave out | keep: the product contract asks it of a reverb, and it is a button, not a sound control |
